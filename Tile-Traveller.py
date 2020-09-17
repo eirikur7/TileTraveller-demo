@@ -1,4 +1,8 @@
 
+
+# Input1: direction (which direction is specified in where to go)
+# Input2: location (current location)
+### The function calculates next location on grid ###
 def movement(direction,location):
     direction.lower()
     if direction == 'e':
@@ -11,15 +15,16 @@ def movement(direction,location):
         location -= 1
     return location
     
-
-## Function wich tells you where you can go and you input where to go
-## return error if direction is not valid
+# Input: location (Current Location on grid)
+### Tells you where you can go
+### Your Input, is where you want to go 
+### Checks if input is valid
 def where_to_go(location):
     north = '(N)orth'
     east = '(E)ast'
     south = '(S)outh'
     west = '(W)est'
-    o = ' or '
+    o = ' or '              # we used o to make things easier later on
     direction = 'xx'
     cardinal_direction = ''
     while cardinal_direction.find(direction) == -1:
@@ -47,6 +52,7 @@ def where_to_go(location):
         direction = (input('Direction: ')).lower()
     return direction
 
+## Goes into both the function until location is 31
 location = 11
 while location != 31:
     direction = where_to_go(location)
